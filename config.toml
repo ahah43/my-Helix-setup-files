@@ -1,0 +1,86 @@
+# theme = "onedark"
+theme = "tokyonight_storm"
+
+[editor]
+line-number = "relative"
+mouse = false
+auto-completion=true
+auto-save=true
+auto-format=true
+text-width=80
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+soft-wrap.enable = true
+soft-wrap.max-indent-retain=80
+bufferline="always"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner", "file-modification-indicator", "read-only-indicator"]
+center = ["file-name"]
+right = ["diagnostics", "register", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "LOCKED"
+mode.insert = "WORKING"
+mode.select = "VISUAL SEL"
+
+[editor.lsp]
+enable=true
+auto-signature-help=true
+display-messages = true
+
+[editor.indent-guides]
+render = true
+character = "┊"
+skip-levels = 1
+
+# At most one section each of 'keys.normal', 'keys.insert' and 'keys.select'
+[keys.normal]
+"A-k" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
+"A-j" = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
+
+A-C-k = ["extend_to_line_bounds", "yank", "open_above", "normal_mode", "replace_with_yanked", "collapse_selection"]
+A-C-j = ["extend_to_line_bounds", "yank", "open_below", "normal_mode", "replace_with_yanked", "collapse_selection"]
+
+"C-k" = [ "move_line_up", "scroll_up" ]
+"C-j" = [ "move_line_down", "scroll_down" ]
+
+C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+g = { a = "code_action" } # Maps `ga` to show possible code actions
+"ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
+"esc" = ["collapse_selection", "keep_primary_selection"]
+# " " = {B = "file_picker_in_current_buffer_directory"}
+
+[keys.insert]
+"A-x" = "normal_mode"     # Maps Alt-X to enter normal mode
+
+[keys.normal.space]
+"B" = "file_picker_in_current_buffer_directory"
+
+
+
+# [keys.normal]
+# "C-S-b" = ":run-shell cargo build"
+
+# Language-specific build commands
+
+# [keys.language:rust]
+# "C-S-b" = ":run-shell cargo build"
+
+# [keys.language:go]
+# "C-S-b" = ":run-shell go build"
+
+
+# [keys.normal]
+# "C-S-r" = ":run-shell cargo run"
+
+# Language-specific build commands
+# [keys.language:rust]
+# "C-S-r" = ":run-shell cargo run"
+
+# [keys.language:go]
+# "C-S-r" = ":run-shell go run ."
