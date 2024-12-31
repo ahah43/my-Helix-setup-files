@@ -43,8 +43,11 @@ skip-levels = 1
 "A-k" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
 "A-j" = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
 
-A-C-k = ["extend_to_line_bounds", "yank", "open_above", "normal_mode", "replace_with_yanked", "collapse_selection"]
-A-C-j = ["extend_to_line_bounds", "yank", "open_below", "normal_mode", "replace_with_yanked", "collapse_selection"]
+"A-C-k" = [ "extend_to_line_bounds", "yank", "paste_before" ]
+"A-C-j" = [ "extend_to_line_bounds", "yank", "paste_after" ]
+
+# A-C-k = ["extend_to_line_bounds", "yank", "open_above", "normal_mode", "replace_with_yanked", "collapse_selection"]
+# A-C-j = ["extend_to_line_bounds", "yank", "open_below", "normal_mode", "replace_with_yanked", "collapse_selection"]
 
 "C-k" = [ "move_line_up", "scroll_up" ]
 "C-j" = [ "move_line_down", "scroll_down" ]
